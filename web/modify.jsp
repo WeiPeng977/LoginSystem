@@ -23,7 +23,7 @@
             </tr>
             <tr>
                 <td align="center">
-                    <input type="button" value="modify" onclick="modify()"  style="width: 80px;"/>
+                    <input type="button" value="modify" onclick="modify()"  style="width: 170px;"/>
                 </td>
             </tr>
         </table>

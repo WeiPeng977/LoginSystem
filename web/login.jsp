@@ -33,12 +33,12 @@
 
 <script type="text/javascript">
     function login(){
-        document.from.action="your add method url";//提交的url
+        document.from.action="user.jsp";//提交的url
         document.from.submit();
     }
 
     function register0(){
-        document.from.action="your delete method url";//提交的url
+        document.from.action="register.jsp";//提交的url
         document.from.submit();
     }
 </script>
