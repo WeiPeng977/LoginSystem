@@ -23,15 +23,15 @@
             </tr>
             <tr>
                 <td align="center">
-                    <input type="button" value="modify" onclick="modify()"  style="width: 170px;"/>
+                    <input type="button" value="modify" onclick="modify()" style="width: 170px;"/>
                 </td>
             </tr>
         </table>
     </form>
 </div>
 <script type="text/javascript">
-    function modify(){
-        document.from.action="your add method url";//提交的url
+    function modify() {
+        document.from.action = "your add method url";//提交的url
         document.from.submit();
     }
 </script>
