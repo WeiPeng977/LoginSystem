@@ -6,20 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1420983-68e3-446d-a5ce-ba8e03a61299" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_39_bin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dao/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Servlet/UserServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-5.1.39-bin.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/LoginSystem_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/LoginSystem_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoginSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LoginSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/modify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/modify.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/register.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="b1420983-68e3-446d-a5ce-ba8e03a61299" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,8 +65,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Servlet/UserServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="-26">
+              <caret line="74" selection-start-line="74" selection-end-line="74" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#443#444#0" expanded="true" />
@@ -402,7 +389,7 @@
       <updated>1565672029736</updated>
       <workItem from="1565672040669" duration="25124000" />
       <workItem from="1565756428975" duration="1480000" />
-      <workItem from="1565758120633" duration="11259000" />
+      <workItem from="1565758120633" duration="11543000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;loginTest index&quot;">
       <created>1565686765083</created>
@@ -453,16 +440,30 @@
       <option name="project" value="LOCAL" />
       <updated>1565746637990</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="&quot;loginTest modify read and register complete&quot;">
+      <created>1565923679609</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1565923679609</updated>
+    </task>
+    <task id="LOCAL-00009" summary="&quot;loginTest modify read and register complete&quot;">
+      <created>1565923727970</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1565923727970</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37863000" />
+    <option name="totallyTimeSpent" value="38147000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1356" height="877" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27321157" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27321157" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -615,8 +616,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Servlet/UserServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="-26">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#443#444#0" expanded="true" />
