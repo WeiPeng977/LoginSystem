@@ -33,7 +33,7 @@
 
 <script type="text/javascript">
     function login() {
-        document.from.action = "user.jsp";//提交的url
+        document.from.action = "read";//提交的url
         document.from.submit();
     }
 
@@ -42,6 +42,5 @@
         document.from.submit();
     }
 </script>
-
 </body>
 </html>

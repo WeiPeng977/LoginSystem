@@ -23,15 +23,15 @@
             </tr>
             <tr>
                 <td align="center">
-                    <input type="button" value="register" onclick="register1()"  style="width: 170px;"/>
+                    <input type="button" value="register" onclick="register0()"  style="width: 170px;"/>
                 </td>
             </tr>
         </table>
     </form>
 </div>
 <script type="text/javascript">
-    function register1(){
-        document.from.action="your add method url";//提交的url
+    function register0(){
+        document.from.action="create";//提交的url
         document.from.submit();
     }
 </script>

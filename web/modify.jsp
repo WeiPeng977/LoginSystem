@@ -16,7 +16,7 @@
     <form name="from" method="post">
         <table>
             <tr>
-                <td><input type="text" name="userName" placeholder="UserName" style="width: 200px;"/></td>
+                <td width="200px" align="left"><p>userName:aPeng977</p></td>
             </tr>
             <tr>
                 <td><input type="password" name="password" placeholder="Password" style="width: 200px;"/></td>
