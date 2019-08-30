@@ -2,16 +2,16 @@ package Servlet;
 
 import Classes.User;
 import Dao.UserDao;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet("/")
 public class UserServlet extends HttpServlet {
@@ -41,6 +41,10 @@ public class UserServlet extends HttpServlet {
                     readUser(request, response);
                     break;
 
+                case "/login":
+                    loginVerify(request, response);
+                    break;
+
                 case "/update":
                     updateUser(request, response);
                     break;
@@ -53,6 +57,36 @@ public class UserServlet extends HttpServlet {
             throw new ServletException(ex);
         }
     }
+
+    private void loginVerify(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
+        String userName = request.getParameter("userName");
+        String password = request.getParameter("password");
+
+        List<String> info=new ArrayList<String>();
+
+        if(userName==null||"".equals(userName)){ //用户名输入格式问题
+            info.add("用户名不能为空");
+            System.out.println("用户名不能为空");
+        }
+
+        if(password==null||"".equals(password)){//密码输入格式问题
+            info.add("密码不能为空");
+            System.out.println("密码不能为空");
+        }
+
+        User existingUser = userDao.readUser(userName);
+
+        if(info.size()==0){
+            if(password.equals(existingUser.getPassword())){
+                PrintWriter out = response.getWriter();
+                out.print("<script language='javascript'>alert('login successful!'); window.location.href='user.jsp'</script>");
+            }else{
+                PrintWriter out = response.getWriter();
+                out.print("<script language='javascript'>alert('register failed!'); window.location.href='index.jsp'</script>");
+            }
+        }
+    }
+
 
     private void createUser(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
         String username = request.getParameter("userName");
