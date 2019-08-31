@@ -32,26 +32,22 @@ public class UserServlet extends HttpServlet {
 
         String action = request.getServletPath();
 
-        try {
-            switch (action) {
-                case "/create":
-                    createUser(request, response);
-                    break;
+        switch (action) {
+            case "/create":
+                createUser(request, response);
+                break;
 
-                case "/login":
-                    loginVerify(request, response);
-                    break;
+            case "/login":
+                loginVerify(request, response);
+                break;
 
-                case "/update":
-                    updateUser(request, response);
-                    break;
+            case "/update":
+                updateUser(request, response);
+                break;
 
-                case "/delete":
-                    deleteUser(request, response);
-                    break;
-            }
-        } catch (SQLException ex) {
-            throw new ServletException(ex);
+            case "/delete":
+                deleteUser(request, response);
+                break;
         }
     }
 
