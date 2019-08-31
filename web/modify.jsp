@@ -31,7 +31,7 @@
 </div>
 <script type="text/javascript">
     function modify() {
-        document.from.action = "your add method url";//提交的url
+        document.from.action = "update?userName=" + getQueryVariable("userName");//提交的url
         document.from.submit();
     }
 

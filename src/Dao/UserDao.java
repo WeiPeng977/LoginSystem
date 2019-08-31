@@ -71,6 +71,18 @@ public class UserDao {
     }
 
 
+    public boolean updateUser(User user) throws SQLException {
+        boolean rowUpdate;
+        try (Connection connection = getConnection(); PreparedStatement statement = connection.prepareStatement(UPDATE_USER_SQL)) {
+
+            statement.setString(1, user.getPassword());
+            statement.setString(2, user.getUserName());
+
+            rowUpdate = statement.executeUpdate() > 0;
+        }
+        return rowUpdate;
+    }
+
 
     private void printSQLException(SQLException ex) {
         for (Throwable e : ex) {

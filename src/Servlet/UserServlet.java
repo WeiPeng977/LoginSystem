@@ -93,13 +93,13 @@ public class UserServlet extends HttpServlet {
         if (username == null || "".equals(username)) { //用户名输入格式问题
             info.add("username can not be empty!");
             PrintWriter out = response.getWriter();
-            out.print("<script language='javascript'>alert('username can not be empty!'); window.location.href='register.jsp'</script>");
+            out.print("<script language='javascript'>alert('username can not be empty!'); window.location.href='modify.jsp'</script>");
         }
 
         if (password == null || "".equals(password)) {//密码输入格式问题
             info.add("password can not be empty!");
             PrintWriter out = response.getWriter();
-            out.print("<script language='javascript'>alert('password can not be empty!'); window.location.href='register.jsp'</script>");
+            out.print("<script language='javascript'>alert('password can not be empty!'); window.location.href='modify.jsp'</script>");
         }
 
         if (info.size() == 0) {
@@ -107,11 +107,11 @@ public class UserServlet extends HttpServlet {
             User existingUser = userDao.readUser(username);
 
             if (existingUser == null) {
-                User User = new User();
-                User.setUserName(username);
-                User.setPassword(password);
+                User user = new User();
+                user.setUserName(username);
+                user.setPassword(password);
                 try {
-                    userDao.createUser(User);
+                    userDao.createUser(user);
                 } catch (Exception e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
@@ -126,9 +126,41 @@ public class UserServlet extends HttpServlet {
         }
     }
 
-    private void updateUser(HttpServletRequest request, HttpServletResponse response) {
+    private void updateUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("userName");
         String password = request.getParameter("password");
+
+        List<String> info = new ArrayList<String>();
+
+
+        if (password == null || "".equals(password)) {//密码输入格式问题
+            info.add("password can not be empty!");
+            PrintWriter out = response.getWriter();
+            out.print("<script language='javascript'>alert('password can not be empty!'); window.location.href='register.jsp'</script>");
+        }
+
+        if (info.size() == 0) {
+
+            User existingUser = userDao.readUser(username);
+
+            if (existingUser == null){
+                PrintWriter out = response.getWriter();
+                out.print("<script language='javascript'>alert('user doesn't exists! please login again!'); window.location.href='index.jsp'</script>");
+            }else {
+                User user = new User();
+                user.setUserName(username);
+                user.setPassword(password);
+                try {
+                    userDao.updateUser(user);
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                PrintWriter out = response.getWriter();
+                out.print("<script language='javascript'>alert('modify successful!'); window.location.href='index.jsp'</script>");
+            }
+
+        }
     }
 
     private void deleteUser(HttpServletRequest request, HttpServletResponse response) {
