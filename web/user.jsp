@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<% String userName = (String) request.getAttribute("userName");
+    String password = (String) request.getAttribute("password"); %>
 <html>
 <head>
     <title>User</title>
@@ -17,11 +19,13 @@
         <table align="center">
             <tr>
                 <td width="100px" align="right"><p>userName:</p></td>
-                <td width="100px" align="left"><p>aPeng977</p></td>
+                <td width="100px" align="left"><p><%= userName%>
+                </p></td>
             </tr>
             <tr>
                 <td width="100px" align="right"><p>password:</p></td>
-                <td width="100px" align="left"><p>12345678</p></td>
+                <td width="100px" align="left"><p><%= password%>
+                </p></td>
             </tr>
             <tr>
                 <td align="right"><input type="button" value="modify" onclick="modify()" style="width: 80px;"/></td>
@@ -32,12 +36,12 @@
 </div>
 <script type="text/javascript">
     function modify() {
-        document.from.action = "modify.jsp";//提交的url
+        document.from.action = "modify.jsp?userName=<%= userName%>";//提交的url
         document.from.submit();
     }
 
     function logout() {
-        document.from.action = "your delete method url";//提交的url
+        document.from.action = "index.jsp";//提交的url
         document.from.submit();
     }
 </script>

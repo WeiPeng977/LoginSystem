@@ -23,13 +23,20 @@
             </tr>
             <tr>
                 <td align="center">
-                    <input type="button" value="register" onclick="register0()"  style="width: 170px;"/>
+                    <input type="button" value="register" onclick="register0()"  style="width: 80px;"/>
+                    <input type="button" value="login" onclick="login()" style="width: 80px;"/>
                 </td>
             </tr>
         </table>
     </form>
 </div>
 <script type="text/javascript">
+
+    function login() {
+        document.from.action = "index.jsp";//提交的url
+        document.from.submit();
+    }
+
     function register0(){
         document.from.action="create";//提交的url
         document.from.submit();
