@@ -31,23 +31,26 @@ public class UserServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String action = request.getServletPath();
+        try {
+            switch (action) {
+                case "/create":
+                    createUser(request, response);
+                    break;
 
-        switch (action) {
-            case "/create":
-                createUser(request, response);
-                break;
+                case "/login":
+                    loginVerify(request, response);
+                    break;
 
-            case "/login":
-                loginVerify(request, response);
-                break;
+                case "/update":
+                    updateUser(request, response);
+                    break;
 
-            case "/update":
-                updateUser(request, response);
-                break;
-
-            case "/delete":
-                deleteUser(request, response);
-                break;
+                case "/delete":
+                    deleteUser(request, response);
+                    break;
+            }
+        } catch (SQLException ex) {
+            throw new ServletException(ex);
         }
     }
 
@@ -72,13 +75,21 @@ public class UserServlet extends HttpServlet {
         User existingUser = userDao.readUser(userName);
 
         if (info.size() == 0) {
-            if (password.equals(existingUser.getPassword())) {
-                request.setAttribute("userName", userName);
-                request.setAttribute("password", password);
-                request.getRequestDispatcher("user.jsp").forward(request, response);
-            } else {
+            if (existingUser == null) {
                 PrintWriter out = response.getWriter();
-                out.print("<script language='javascript'>alert('login failed!'); window.location.href='index.jsp'</script>");
+                out.print("<script language='javascript'>alert('login failed! user does not exists'); window.location.href='index.jsp'</script>");
+            } else {
+
+                if (password.equals(existingUser.getPassword())) {
+
+                    request.setAttribute("userName", userName);
+                    request.setAttribute("password", password);
+                    request.getRequestDispatcher("user.jsp").forward(request, response);
+
+                } else {
+                    PrintWriter out = response.getWriter();
+                    out.print("<script language='javascript'>alert('login failed! wrong password'); window.location.href='index.jsp'</script>");
+                }
             }
         }
     }
@@ -93,13 +104,13 @@ public class UserServlet extends HttpServlet {
         if (username == null || "".equals(username)) { //用户名输入格式问题
             info.add("username can not be empty!");
             PrintWriter out = response.getWriter();
-            out.print("<script language='javascript'>alert('username can not be empty!'); window.location.href='modify.jsp'</script>");
+            out.print("<script language='javascript'>alert('username can not be empty!'); window.location.href='register.jsp'</script>");
         }
 
         if (password == null || "".equals(password)) {//密码输入格式问题
             info.add("password can not be empty!");
             PrintWriter out = response.getWriter();
-            out.print("<script language='javascript'>alert('password can not be empty!'); window.location.href='modify.jsp'</script>");
+            out.print("<script language='javascript'>alert('password can not be empty!'); window.location.href='register.jsp'</script>");
         }
 
         if (info.size() == 0) {
@@ -141,29 +152,29 @@ public class UserServlet extends HttpServlet {
 
         if (info.size() == 0) {
 
-            User existingUser = userDao.readUser(username);
-
-            if (existingUser == null){
-                PrintWriter out = response.getWriter();
-                out.print("<script language='javascript'>alert('user doesn't exists! please login again!'); window.location.href='index.jsp'</script>");
-            }else {
-                User user = new User();
-                user.setUserName(username);
-                user.setPassword(password);
-                try {
-                    userDao.updateUser(user);
-                } catch (Exception e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-                PrintWriter out = response.getWriter();
-                out.print("<script language='javascript'>alert('modify successful!'); window.location.href='index.jsp'</script>");
+            User user = new User();
+            user.setUserName(username);
+            user.setPassword(password);
+            try {
+                userDao.updateUser(user);
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
             }
-
+            PrintWriter out = response.getWriter();
+            out.print("<script language='javascript'>alert('modify successful!'); window.location.href='index.jsp'</script>");
         }
+
+
     }
 
-    private void deleteUser(HttpServletRequest request, HttpServletResponse response) {
+    private void deleteUser(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 
+        String userName = request.getParameter("userName");
+
+        userDao.deleteUser(userName);
+
+        PrintWriter out = response.getWriter();
+        out.print("<script language='javascript'>alert('logout successful!'); window.location.href='index.jsp'</script>");
     }
 }

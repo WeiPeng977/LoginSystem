@@ -83,6 +83,14 @@ public class UserDao {
         return rowUpdate;
     }
 
+    public boolean deleteUser(String userName) throws SQLException {
+        boolean rowDelete;
+        try (Connection connection = getConnection(); PreparedStatement statement = connection.prepareStatement(DELETE_USER_SQL)) {
+            statement.setString(1, userName);
+            rowDelete = statement.executeUpdate() > 0;
+        }
+        return rowDelete;
+    }
 
     private void printSQLException(SQLException ex) {
         for (Throwable e : ex) {
