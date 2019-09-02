@@ -24,10 +24,8 @@ public class UserDao {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(DB_URL, USER, PASS);
         }catch(SQLException e){
-            //TODO Auto-generated catch block
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
-            //TODO Auto-generated catch block
             e.printStackTrace();
         }
         return connection;
@@ -35,12 +33,13 @@ public class UserDao {
 
     public void createUser(User user) throws SQLException {
         System.out.println(INSERT_USER_SQL);
+        //第一步，建立连接
         try (Connection connection = getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USER_SQL)) {
-
+            //第二步，使用连接对象创建语句
             preparedStatement.setString(1, user.getUserName());
             preparedStatement.setString(2, user.getPassword());
-
             System.out.println(preparedStatement);
+            //第三步，执行创建
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             printSQLException(e);

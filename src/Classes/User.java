@@ -1,5 +1,6 @@
 package Classes;
 
+//user类
 public class User {
 
     protected String userName;

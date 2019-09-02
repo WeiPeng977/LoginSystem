@@ -41,7 +41,7 @@
     }
 
     function register0(){
-        document.from.action="create";//提交的url
+        document.from.action="register";//提交的url
         document.from.submit();
     }
 </script>

@@ -34,7 +34,7 @@
 </div>
 <script type="text/javascript">
     function modify() {
-        document.from.action = "update?userName=" + getQueryVariable("userName");//提交的url
+        document.from.action = "modify?userName=" + getQueryVariable("userName");//提交的url
         document.from.submit();
     }
 

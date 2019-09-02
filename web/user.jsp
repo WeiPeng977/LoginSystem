@@ -48,7 +48,7 @@
     }
 
     function logout() {
-        document.from.action = "delete?userName=<%= userName%>";//提交的url
+        document.from.action = "logout?userName=<%= userName%>";//提交的url
         document.from.submit();
     }
 

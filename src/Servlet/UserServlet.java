@@ -33,20 +33,20 @@ public class UserServlet extends HttpServlet {
         String action = request.getServletPath();
         try {
             switch (action) {
-                case "/create":
-                    createUser(request, response);
+                case "/register":
+                    register(request, response);
                     break;
 
                 case "/login":
-                    loginVerify(request, response);
+                    login(request, response);
                     break;
 
-                case "/update":
-                    updateUser(request, response);
+                case "/modify":
+                    modify(request, response);
                     break;
 
-                case "/delete":
-                    deleteUser(request, response);
+                case "/logout":
+                    logout(request, response);
                     break;
             }
         } catch (SQLException ex) {
@@ -54,7 +54,7 @@ public class UserServlet extends HttpServlet {
         }
     }
 
-    private void loginVerify(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
 
@@ -95,7 +95,7 @@ public class UserServlet extends HttpServlet {
     }
 
 
-    private void createUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void register(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("userName");
         String password = request.getParameter("password");
 
@@ -137,7 +137,7 @@ public class UserServlet extends HttpServlet {
         }
     }
 
-    private void updateUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void modify(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("userName");
         String password = request.getParameter("password");
 
@@ -168,7 +168,7 @@ public class UserServlet extends HttpServlet {
 
     }
 
-    private void deleteUser(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+    private void logout(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 
         String userName = request.getParameter("userName");
 
