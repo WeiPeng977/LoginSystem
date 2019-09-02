@@ -12,11 +12,12 @@
 </head>
 <body>
 <div align="center">
-
+    <!-- 调整页面上边距 -->
     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
     <h1>LoginPage</h1>
     <form name="from" method="post">
+        <!--表格，三行一列，宽度200px-->
         <table>
             <tr>
                 <td><input type="text" name="userName" placeholder="UserName" style="width: 200px;"/></td>
@@ -27,23 +28,23 @@
             <tr>
                 <td align="center">
                     <input type="button" value="login" onclick="login()" style="width: 80px;"/>
-                    <input type="button" value="register" onclick="register0()" style="width: 80px;"/>
+                    <input type="button" value="register" onclick="register()" style="width: 80px;"/>
                 </td>
             </tr>
         </table>
     </form>
 </div>
-
+<!--按钮执行的函数，为了使表单中不同的按钮可以执行不同的方法，所以将提交表单的方法卸载函数中-->
 <script type="text/javascript">
     function login() {
         document.from.action = "login";//提交的url
         document.from.submit();
-    }
+    }<!--登录，对应UserServlet.java中的login方法-->
 
-    function register0() {
+    function register() {
         document.from.action = "register.jsp";//提交的url
         document.from.submit();
-    }
+    }<!--注册页面-->
 </script>
 </body>
 </html>
