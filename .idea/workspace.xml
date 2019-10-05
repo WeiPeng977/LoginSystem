@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ece3bc1-392f-4c5f-b293-c7ba2edf0c8f" name="Default Changelist" comment="" />
+    <list default="true" id="1ece3bc1-392f-4c5f-b293-c7ba2edf0c8f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../LoginSystem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LoginSystem/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LoginSystem/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/../LoginSystem/register.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +38,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../LoginSystem" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
@@ -71,15 +80,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHP Built-in Web Server.test1">
-    <configuration name="test1" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$">
+  <component name="RunManager" selected="PHP Built-in Web Server.LoginSystem">
+    <configuration name="LoginSystem" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$/../LoginSystem">
       <method v="2" />
     </configuration>
     <configuration name="xDebug" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" server_name="login" start_url="/loginCheck.html">
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="PHP Built-in Web Server.test1" />
+      <item itemvalue="PHP Built-in Web Server.LoginSystem" />
       <item itemvalue="PHP Web Page.xDebug" />
     </list>
   </component>
@@ -96,7 +105,7 @@
       <workItem from="1569999684399" duration="7221000" />
       <workItem from="1570019787156" duration="13957000" />
       <workItem from="1570086015670" duration="1756000" />
-      <workItem from="1570087842453" duration="27870000" />
+      <workItem from="1570087842453" duration="28220000" />
     </task>
     <task id="LOCAL-00001" summary="first php commit">
       <created>1570259760248</created>
@@ -105,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570259760248</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="first php commit">
+      <created>1570260717729</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1570260717729</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

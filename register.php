@@ -27,7 +27,7 @@ while ($row = mysqli_fetch_array($result)) {
 }
 
 if ($user == null) {
-    echo "<script language='JavaScript'>alert('username can not be empty!'); window.location.href=rrRegisterPage.html</script>";
+    echo "<script language='JavaScript'>alert('username can not be empty!'); window.location.href='RegisterPage.html'</script>";
 }
 
 if ($pass == null) {
